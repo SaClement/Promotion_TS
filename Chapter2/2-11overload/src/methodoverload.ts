@@ -14,9 +14,10 @@ let messages: Message[] = [
   { id: 5, type: 'image', sendmessage: '王牌对王牌' }
 ]
 
-function getMessage(value: number, ...name: any): Message
-function getMessage(value: MessageType, recordCount: number): Message[]
-function getMessage(value: any, ...nameOrRecordCount: any) {
+// 函数签名
+function getMessage(value: number, ...name: any): Message // 重载签名
+function getMessage(value: MessageType, recordCount: number): Message[] // 重载签名
+function getMessage(value: any, ...nameOrRecordCount: any): Message| undefined | Message[] { // 实现签名
   if(typeof value === 'number') {
     return messages.find((msg)=>msg.id == value);
   }else{
