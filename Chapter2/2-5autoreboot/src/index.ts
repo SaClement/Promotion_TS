@@ -1,6 +1,4 @@
-console.log("abc");
+import NewLocalStorage from "./2-16singleDesignMode/newLocalStorage";
 
-let count: number = 25;
-
-console.log("count:", count);
-
+let localStorage = NewLocalStorage.getInstance();
+console.log(localStorage)
