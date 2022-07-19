@@ -1,6 +1,7 @@
 export default class NewLocalStorage {
 
-  static localStorage: NewLocalStorage
+  static localStorage: NewLocalStorage // 引用类型静态属性
+  static total: number = 0 // 基本类型静态属性
   // 第一步
   private constructor() {
 
@@ -16,8 +17,15 @@ export default class NewLocalStorage {
     if (!this.localStorage) {
       console.log('创建一个LocalStorage对象')
       this.localStorage = new NewLocalStorage()
+      /**
+       * static 修饰符是限制外部访问静态属性的，而不能限制静态属性的指向，所以静态属性可以指向一个类对象
+       */
     }
     return this.localStorage
+  }
+
+  public static addTotal() {
+    this.total += 3;
   }
 
   public setItem(key: string, value: any): void {
