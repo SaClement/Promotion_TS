@@ -7,6 +7,6 @@ const arr = [10, 20, 30, 40] as const
 
 function setArr(arr: readonly any[]) {
   // arr[0] = 20
-}
+} 
 
 setArr(arr)
